@@ -1,0 +1,11 @@
+img {
+  /* display: flex;
+  flex-wrap: row wrap;
+  justify-content: space-evenly; */
+  width: 100%;
+  max-width: 250px;
+  max-height: 250px;
+  padding: 10px;
+}
+
+
