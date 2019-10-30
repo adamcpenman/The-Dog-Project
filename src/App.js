@@ -11,6 +11,7 @@ const [breed, setBreed] = useLocalStorage('breed', 'husky');
 const [count, setCount] = useLocalStorage('count', 1);
 // const [images, setImages] = useState([]);
 const [images, setImages] = useDodImages(breed, count);
+// const [images] = useState([]);
 
 // useEffect (() => {
 // //    this.setState({ images: [] })
@@ -41,7 +42,8 @@ const [images, setImages] = useDodImages(breed, count);
 
   return (
       <div>
-        <h1>The Dog Website</h1>
+        {/* style={{display: "none"}} */}
+        <h1>THE DOG WEBSITE</h1>
           <select value={breed} onChange={e => setBreed(e.target.value)}>
             <option value="husky">Husky</option>
             <option value="beagle">Beagle</option>
@@ -52,7 +54,7 @@ const [images, setImages] = useDodImages(breed, count);
 
           <input  
             type="number"
-            placeholder="Image Count"
+            placeholder="Count"
             value={count}
             onChange={e => setCount(e.target.value)}
           />
@@ -62,6 +64,7 @@ const [images, setImages] = useDodImages(breed, count);
               <img key={index} src={item} alt="dog" />
             ))}
           </div>
+          <button onClick={() => setImages([])}>Clear Images</button>
       </div>
     )
 }
